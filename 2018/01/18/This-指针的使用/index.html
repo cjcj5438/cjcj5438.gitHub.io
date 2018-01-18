@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>This 指针的使用 | 陈靖&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="谁调指谁123456//example 01function test() &amp;#123;    console.log(this.m)&amp;#125;this.m=100window.test(); //这里的this是window 123456789//example 02this.m=1000;var obj=&amp;#123;	m:100,	test:function()&amp;#123;		console">
+<meta name="keywords" content="ES5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="This 指针的使用">
+<meta property="og:url" content="https://cjcj5438.github.io/cjcj5438.github.io/2018/01/18/This-指针的使用/index.html">
+<meta property="og:site_name" content="陈靖&#39;s blog">
+<meta property="og:description" content="谁调指谁123456//example 01function test() &amp;#123;    console.log(this.m)&amp;#125;this.m=100window.test(); //这里的this是window 123456789//example 02this.m=1000;var obj=&amp;#123;	m:100,	test:function()&amp;#123;		console">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-01-18T02:34:51.714Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="This 指针的使用">
+<meta name="twitter:description" content="谁调指谁123456//example 01function test() &amp;#123;    console.log(this.m)&amp;#125;this.m=100window.test(); //这里的this是window 123456789//example 02this.m=1000;var obj=&amp;#123;	m:100,	test:function()&amp;#123;		console">
+  
+    <link rel="alternate" href="/atom.xml" title="陈靖&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">陈靖&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">https://cjcj5438.github.io</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://cjcj5438.github.io/cjcj5438.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-This-指针的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/18/This-指针的使用/" class="article-date">
+  <time datetime="2018-01-18T02:33:22.000Z" itemprop="datePublished">2018-01-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      This 指针的使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="谁调指谁"><a href="#谁调指谁" class="headerlink" title="谁调指谁"></a>谁调指谁</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//example 01</span><br><span class="line">function test() &#123;</span><br><span class="line">    console.log(this.m)</span><br><span class="line">&#125;</span><br><span class="line">this.m=100</span><br><span class="line">window.test(); //这里的this是window</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//example 02</span><br><span class="line">this.m=1000;</span><br><span class="line">var obj=&#123;</span><br><span class="line">	m:100,</span><br><span class="line">	test:function()&#123;</span><br><span class="line">		console.log(this.m)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.test();&gt;&gt;100</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//example 03 闭包里面的this</span><br><span class="line">this.m = 1000;</span><br><span class="line">var obj = &#123;</span><br><span class="line">    m: 100,</span><br><span class="line">    test: function () &#123;</span><br><span class="line">        // console.log(this.m);//100</span><br><span class="line">        return function () &#123;</span><br><span class="line">            console.log(this.m)</span><br><span class="line">            //这里被返回到外层函数,在window全局下. 此时的this 是1000;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.test()();&gt;&gt;1000</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//example 04在DOM事件上的this指向</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; value=&quot;test&quot; id=&quot;test&quot; style=&quot;color: red&quot;&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var style=&#123;</span><br><span class="line">        color:&quot;green&quot;</span><br><span class="line">    &#125;;</span><br><span class="line">    function test() &#123;</span><br><span class="line">        console.log(this.style.color)</span><br><span class="line">    &#125;</span><br><span class="line">    document.getElementById(&quot;test&quot;).onclick=test;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//example 05 面向对象的this</span><br><span class="line">this.a = 1000;</span><br><span class="line">function test() &#123;</span><br><span class="line">    this.a = 1;</span><br><span class="line">&#125;</span><br><span class="line">test.prototype.getA = function () &#123;</span><br><span class="line">    return this.a;</span><br><span class="line">&#125;;</span><br><span class="line">var p = new test;</span><br><span class="line">console.log(p.getA())</span><br><span class="line">// p调用了getA ;</span><br><span class="line">// p new test构造函数, 所以最后挂载带test()函数里面的a了</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://cjcj5438.github.io/cjcj5438.github.io/2018/01/18/This-指针的使用/" data-id="cjcjvzpgu0004gcuqhzp2631g" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES5/">ES5</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/01/18/额外的数组/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          额外的数组
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/18/Object-构造器的附加对象-高阶用法/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Object 构造器的附加对象 -- 高阶用法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES5/">ES5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES5/">ES5+</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ES5/" style="font-size: 20px;">ES5</a> <a href="/tags/ES5/" style="font-size: 20px;">ES5+</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/18/额外的数组/">额外的数组</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/18/This-指针的使用/">This 指针的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/18/Object-构造器的附加对象-高阶用法/">Object 构造器的附加对象 -- 高阶用法</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/18/JSON进阶/">JSON进阶</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/18/bind-call-apply-点拨/">bind&amp;call&amp;apply 点拨</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 陈靖<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

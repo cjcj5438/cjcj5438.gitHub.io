@@ -5,20 +5,20 @@
   
 
   
-  <title>Linux基本命令 | 陈靖&#39;s blog</title>
+  <title>bind&amp;call&amp;apply 点拨 | 陈靖&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Linux 基本命令 ls 查看文件目录 dir 查看文件目录 ls -l 查看文件详情 ls -a 查看隐藏文件  . 当前目录;  .. 上一级目录 cd 切换目录 mkdir xxx 创建xxx目录 cp &amp;lt;目标文件&amp;gt; [期望文件路径]/&amp;lt;重命名文件名&amp;gt; eg:cp oldfile C/newfile 复制文件 cd ../.. 退回2级目录 cp -R oldfil">
-<meta name="keywords" content="Linux">
+  <meta name="description" content="bind()方法创建一个新的函数, 当被调用时，将其this关键字设置为提供的值，在调用新函数时，在任何提供之前提供一个给定的参数序列。我的理解:  允许你改变当前function 的相应this的作用123456789101112131415161718192021&amp;quot;use strict&amp;quot;;//this的值被bind改变了function locate() &amp;#123;">
+<meta name="keywords" content="ES5">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux基本命令">
-<meta property="og:url" content="https://cjcj5438.github.io/cjcj5438.github.io/2018/01/17/Linux基本命令/index.html">
+<meta property="og:title" content="bind&amp;call&amp;apply 点拨">
+<meta property="og:url" content="https://cjcj5438.github.io/cjcj5438.github.io/2018/01/18/bind-call-apply-点拨/index.html">
 <meta property="og:site_name" content="陈靖&#39;s blog">
-<meta property="og:description" content="Linux 基本命令 ls 查看文件目录 dir 查看文件目录 ls -l 查看文件详情 ls -a 查看隐藏文件  . 当前目录;  .. 上一级目录 cd 切换目录 mkdir xxx 创建xxx目录 cp &amp;lt;目标文件&amp;gt; [期望文件路径]/&amp;lt;重命名文件名&amp;gt; eg:cp oldfile C/newfile 复制文件 cd ../.. 退回2级目录 cp -R oldfil">
+<meta property="og:description" content="bind()方法创建一个新的函数, 当被调用时，将其this关键字设置为提供的值，在调用新函数时，在任何提供之前提供一个给定的参数序列。我的理解:  允许你改变当前function 的相应this的作用123456789101112131415161718192021&amp;quot;use strict&amp;quot;;//this的值被bind改变了function locate() &amp;#123;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-17T04:00:31.434Z">
+<meta property="og:updated_time" content="2018-01-18T02:29:43.325Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux基本命令">
-<meta name="twitter:description" content="Linux 基本命令 ls 查看文件目录 dir 查看文件目录 ls -l 查看文件详情 ls -a 查看隐藏文件  . 当前目录;  .. 上一级目录 cd 切换目录 mkdir xxx 创建xxx目录 cp &amp;lt;目标文件&amp;gt; [期望文件路径]/&amp;lt;重命名文件名&amp;gt; eg:cp oldfile C/newfile 复制文件 cd ../.. 退回2级目录 cp -R oldfil">
+<meta name="twitter:title" content="bind&amp;call&amp;apply 点拨">
+<meta name="twitter:description" content="bind()方法创建一个新的函数, 当被调用时，将其this关键字设置为提供的值，在调用新函数时，在任何提供之前提供一个给定的参数序列。我的理解:  允许你改变当前function 的相应this的作用123456789101112131415161718192021&amp;quot;use strict&amp;quot;;//this的值被bind改变了function locate() &amp;#123;">
   
     <link rel="alternate" href="/atom.xml" title="陈靖&#39;s blog" type="application/atom+xml">
   
@@ -69,10 +69,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Linux基本命令" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-bind-call-apply-点拨" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/01/17/Linux基本命令/" class="article-date">
-  <time datetime="2018-01-17T03:52:43.000Z" itemprop="datePublished">2018-01-17</time>
+    <a href="/2018/01/18/bind-call-apply-点拨/" class="article-date">
+  <time datetime="2018-01-18T02:28:39.000Z" itemprop="datePublished">2018-01-18</time>
 </a>
     
   </div>
@@ -83,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Linux基本命令
+      bind&amp;call&amp;apply 点拨
     </h1>
   
 
@@ -91,34 +91,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Linux-基本命令"><a href="#Linux-基本命令" class="headerlink" title="Linux 基本命令"></a>Linux 基本命令</h1><ol>
-<li>ls 查看文件目录</li>
-<li>dir 查看文件目录</li>
-<li>ls -l 查看文件详情</li>
-<li>ls -a 查看隐藏文件  . 当前目录;  .. 上一级目录</li>
-<li>cd 切换目录</li>
-<li>mkdir xxx 创建xxx目录</li>
-<li>cp &lt;目标文件&gt; [期望文件路径]/&lt;重命名文件名&gt; eg:cp oldfile C/newfile 复制文件</li>
-<li>cd ../.. 退回2级目录</li>
-<li>cp -R oldfile newfile 复制目录: 在当前目录下复制oldfile目录 同时改名newfile</li>
-<li>pwd 显示当前用户所有目录</li>
-<li>rm &lt;目标文件&gt; 删除文件</li>
-<li>rm -r &lt;目标文件&gt;</li>
-<li>cd / 返回根目录</li>
-<li>cd ~显示用户路径</li>
-<li>touch index.js 创建文件</li>
-<li>vi index.js 进入文件编辑</li>
-<li>cat index.js 查看文件</li>
-<li>init 3 进入无界面</li>
-</ol>
+        <p>bind()方法创建一个新的函数, 当被调用时，将其this关键字设置为提供的值，在调用新函数时，在任何提供之前提供一个给定的参数序列。<br>我的理解:  允许你改变当前function 的相应this的作用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&quot;use strict&quot;;</span><br><span class="line"></span><br><span class="line">//this的值被bind改变了</span><br><span class="line">function locate() &#123;</span><br><span class="line">    console.log(this.location)</span><br><span class="line">&#125;</span><br><span class="line">function Marn(location) &#123;</span><br><span class="line">    this.location=location;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var kitty = new Marn(&apos;my bind&apos;);</span><br><span class="line">//这里的kitty就是this 的改变者</span><br><span class="line">var locateBind=locate.bind(kitty);  //强度理解.换成了kitty:this.prototype  </span><br><span class="line">locateBind();</span><br><span class="line"></span><br><span class="line">//还有这里我们换成call</span><br><span class="line">var kittyCall = new Marn(&quot;my call&quot;);</span><br><span class="line">locate.call(kittyCall);</span><br><span class="line">//还有这里我们换成apply</span><br><span class="line">var kittyApple = new Marn(&quot;my apply&quot;);</span><br><span class="line">locate.apply(kittyCall);</span><br></pre></td></tr></table></figure></p>
+<p>// 这些有什么不同呢? call和bind 之后就要立即执行<br>// 但是我们用来 bind 不会立即执行. 有利于我们对原型链进行扩展</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://cjcj5438.github.io/cjcj5438.github.io/2018/01/17/Linux基本命令/" data-id="cjcjvzpgj0001gcuqwjts798w" class="article-share-link">Share</a>
+      <a data-url="https://cjcj5438.github.io/cjcj5438.github.io/2018/01/18/bind-call-apply-点拨/" data-id="cjcjvzpgv0005gcuqncnuewql" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES5/">ES5</a></li></ul>
 
     </footer>
   </div>
@@ -126,15 +108,20 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/01/18/bind-call-apply-点拨/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/01/18/JSON进阶/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          bind&amp;call&amp;apply 点拨
+          JSON进阶
         
       </div>
     </a>
   
+  
+    <a href="/2018/01/17/Linux基本命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Linux基本命令</div>
+    </a>
   
 </nav>
 
